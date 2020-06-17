@@ -1,157 +1,230 @@
 package ru.netology.domain;
 
 public class Post {
-    private int postId;
-    private int postData;
-    private String postText;
-    private String imageUrl;
-    private String addPhoto;
-    private String addAudio;
-    private String addVideo;
-    private String addDocument;
-    private String addSmile;
-    private int numberOfLikes;
-    private String postComments;
-    private int numberOfComments;
-    private String replyToComment;
-    private String toComplain;
-    private String saveToBookmarks;
-    private int numberOfReposts;
-    private int numberOfViews;
+    private int id;
+    private int ownerId;
+    private int fromId;
+    private int createdBy;
+    private int date;
+    private String text;
+    private int replyOwnerId;
+    private int replyPostId;
+    private boolean friendsOnly;
+    private String copyright;
+    private String postType;
+    private int signerId;
+    private boolean canPin;
+    private boolean canDelete;
+    private boolean canEdit;
+    private boolean isPinned;
+    private boolean markedAsAds;
+    private boolean isFavorite;
+    private int postponedId;
 
-    public int getPostId() {
-        return postId;
+    private CommentsInfo commentsInfo;
+    private NumberOfViews numberOfViews;
+    private PostSource postSource;
+    private Geo geo;
+    private RepostsInfo repostsInfo;
+    private LikesInfo likesInfo;
+
+    public int getId() {
+        return id;
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getPostData() {
-        return postData;
+    public int getOwnerId() {
+        return ownerId;
     }
 
-    public void setPostData(int postData) {
-        this.postData = postData;
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
     }
 
-    public String getPostText() {
-        return postText;
+    public int getFromId() {
+        return fromId;
     }
 
-    public void setPostText(String postText) {
-        this.postText = postText;
+    public void setFromId(int fromId) {
+        this.fromId = fromId;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public int getCreatedBy() {
+        return createdBy;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setCreatedBy(int createdBy) {
+        this.createdBy = createdBy;
     }
 
-    public String getAddPhoto() {
-        return addPhoto;
+    public int getDate() {
+        return date;
     }
 
-    public void setAddPhoto(String addPhoto) {
-        this.addPhoto = addPhoto;
+    public void setDate(int date) {
+        this.date = date;
     }
 
-    public String getAddAudio() {
-        return addAudio;
+    public String getText() {
+        return text;
     }
 
-    public void setAddAudio(String addAudio) {
-        this.addAudio = addAudio;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public String getAddVideo() {
-        return addVideo;
+    public int getReplyOwnerId() {
+        return replyOwnerId;
     }
 
-    public void setAddVideo(String addVideo) {
-        this.addVideo = addVideo;
+    public void setReplyOwnerId(int replyOwnerId) {
+        this.replyOwnerId = replyOwnerId;
     }
 
-    public String getAddDocument() {
-        return addDocument;
+    public int getReplyPostId() {
+        return replyPostId;
     }
 
-    public void setAddDocument(String addDocument) {
-        this.addDocument = addDocument;
+    public void setReplyPostId(int replyPostId) {
+        this.replyPostId = replyPostId;
     }
 
-    public String getAddSmile() {
-        return addSmile;
+    public boolean isFriendsOnly() {
+        return friendsOnly;
     }
 
-    public void setAddSmile(String addSmile) {
-        this.addSmile = addSmile;
+    public void setFriendsOnly(boolean friendsOnly) {
+        this.friendsOnly = friendsOnly;
     }
 
-    public int getNumberOfLikes() {
-        return numberOfLikes;
+    public String getCopyright() {
+        return copyright;
     }
 
-    public void setNumberOfLikes(int numberOfLikes) {
-        this.numberOfLikes = numberOfLikes;
+    public void setCopyright(String copyright) {
+        this.copyright = copyright;
     }
 
-    public String getPostComments() {
-        return postComments;
+    public String getPostType() {
+        return postType;
     }
 
-    public void setPostComments(String postComments) {
-        this.postComments = postComments;
+    public void setPostType(String postType) {
+        this.postType = postType;
     }
 
-    public int getNumberOfComments() {
-        return numberOfComments;
+    public int getSignerId() {
+        return signerId;
     }
 
-    public void setNumberOfComments(int numberOfComments) {
-        this.numberOfComments = numberOfComments;
+    public void setSignerId(int signerId) {
+        this.signerId = signerId;
     }
 
-    public String getReplyToComment() {
-        return replyToComment;
+    public boolean isCanPin() {
+        return canPin;
     }
 
-    public void setReplyToComment(String replyToComment) {
-        this.replyToComment = replyToComment;
+    public void setCanPin(boolean canPin) {
+        this.canPin = canPin;
     }
 
-    public String getToComplain() {
-        return toComplain;
+    public boolean isCanDelete() {
+        return canDelete;
     }
 
-    public void setToComplain(String toComplain) {
-        this.toComplain = toComplain;
+    public void setCanDelete(boolean canDelete) {
+        this.canDelete = canDelete;
     }
 
-    public String getSaveToBookmarks() {
-        return saveToBookmarks;
+    public boolean isCanEdit() {
+        return canEdit;
     }
 
-    public void setSaveToBookmarks(String saveToBookmarks) {
-        this.saveToBookmarks = saveToBookmarks;
+    public void setCanEdit(boolean canEdit) {
+        this.canEdit = canEdit;
     }
 
-    public int getNumberOfReposts() {
-        return numberOfReposts;
+    public boolean isPinned() {
+        return isPinned;
     }
 
-    public void setNumberOfReposts(int numberOfReposts) {
-        this.numberOfReposts = numberOfReposts;
+    public void setPinned(boolean pinned) {
+        isPinned = pinned;
     }
 
-    public int getNumberOfViews() {
+    public boolean isMarkedAsAds() {
+        return markedAsAds;
+    }
+
+    public void setMarkedAsAds(boolean markedAsAds) {
+        this.markedAsAds = markedAsAds;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+
+    public int getPostponedId() {
+        return postponedId;
+    }
+
+    public void setPostponedId(int postponedId) {
+        this.postponedId = postponedId;
+    }
+
+    public CommentsInfo getCommentsInfo() {
+        return commentsInfo;
+    }
+
+    public void setCommentsInfo(CommentsInfo commentsInfo) {
+        this.commentsInfo = commentsInfo;
+    }
+
+    public NumberOfViews getNumberOfViews() {
         return numberOfViews;
     }
 
-    public void setNumberOfViews(int numberOfViews) {
+    public void setNumberOfViews(NumberOfViews numberOfViews) {
         this.numberOfViews = numberOfViews;
+    }
+
+    public PostSource getPostSource() {
+        return postSource;
+    }
+
+    public void setPostSource(PostSource postSource) {
+        this.postSource = postSource;
+    }
+
+    public Geo getGeo() {
+        return geo;
+    }
+
+    public void setGeo(Geo geo) {
+        this.geo = geo;
+    }
+
+    public RepostsInfo getRepostsInfo() {
+        return repostsInfo;
+    }
+
+    public void setRepostsInfo(RepostsInfo repostsInfo) {
+        this.repostsInfo = repostsInfo;
+    }
+
+    public LikesInfo getLikesInfo() {
+        return likesInfo;
+    }
+
+    public void setLikesInfo(LikesInfo likesInfo) {
+        this.likesInfo = likesInfo;
     }
 }
